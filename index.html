@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Novel - Streaming Layout</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-book-open"></i>
+                    NovelStream
+                </h1>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Cari novel atau author...">
+                </div>
+            </div>
+        </header>
+
+        <!-- Filter Section -->
+        <section class="filters">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="hiatus">Hiatus</button>
+            </div>
+            <div class="sort-by">
+                <select id="sortSelect">
+                    <option value="latest">Terbaru</option>
+                    <option value="title">Judul A-Z</option>
+                    <option value="rating">Rating Tertinggi</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Novel Grid -->
+        <section class="novel-grid" id="novelGrid">
+            <!-- Novel cards will be inserted here via JavaScript -->
+        </section>
+
+        <!-- Chapter Modal -->
+        <div class="modal" id="chapterModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalNovelTitle">Daftar Chapter</h2>
+                    <button class="close-modal"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body" id="chapterList">
+                    <!-- Chapters will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                                                  </html>
