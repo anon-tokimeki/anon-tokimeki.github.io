@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lost Kingdom - Chapter 1 | NovelVerse</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../../index.html" class="logo">
+                <i class="fas fa-book-open"></i>
+                <span>Novel<span class="gradient-text">Verse</span></span>
+            </a>
+            <div class="nav-menu">
+                <a href="../../../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link"><i class="fas fa-fire"></i> Popular</a>
+                <a href="#" class="nav-link"><i class="fas fa-clock"></i> Terbaru</a>
+                <a href="#" class="nav-link"><i class="fas fa-bookmark"></i> Favorit</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <button class="notification-btn"><i class="fas fa-bell"></i><span class="badge">3</span></button>
+                <div class="profile"><img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" alt="Profile"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+
+    <!-- Chapter Content -->
+    <main class="chapter-container">
+        <!-- Chapter Header -->
+        <div class="chapter-header" data-aos="fade-down">
+            <div class="chapter-navigation">
+                <button class="nav-chapter" id="prevChapter" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <div class="chapter-info">
+                    <h1 id="novelTitle">The Lost Kingdom</h1>
+                    <h2 id="chapterTitle">Chapter 1</h2>
+                    <div class="chapter-meta">
+                        <span><i class="fas fa-user"></i> <span id="authorName">J.K. Rowling</span></span>
+                        <span><i class="fas fa-calendar"></i> <span id="updateDate">15 Januari 2024</span></span>
+                        <span><i class="fas fa-eye"></i> <span id="viewCount">1.2K</span></span>
+                    </div>
+                </div>
+                <button class="nav-chapter" id="nextChapter">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Reading Settings -->
+        <div class="reading-settings" data-aos="fade-up">
+            <div class="settings-group">
+                <span class="settings-label">Font Size</span>
+                <div class="font-size-controls">
+                    <button class="font-btn" id="decreaseFont"><i class="fas fa-minus"></i></button>
+                    <span id="fontSize">16px</span>
+                    <button class="font-btn" id="increaseFont"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <span class="settings-label">Font Family</span>
+                <select id="fontFamily" class="font-select">
+                    <option value="'Plus Jakarta Sans', sans-serif">Modern</option>
+                    <option value="'Merriweather', serif">Classic</option>
+                    <option value="'Courier New', monospace">Monospace</option>
+                </select>
+            </div>
+            <div class="settings-group">
+                <span class="settings-label">Theme</span>
+                <div class="theme-controls">
+                    <button class="theme-mode-btn" id="lightMode"><i class="fas fa-sun"></i></button>
+                    <button class="theme-mode-btn" id="darkMode"><i class="fas fa-moon"></i></button>
+                    <button class="theme-mode-btn" id="sepiaMode"><i class="fas fa-book"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Novel Content -->
+        <article class="novel-content" id="novelContent" data-aos="fade-up">
+            <!-- Isi cerita akan diisi oleh JavaScript -->
+        </article>
+
+        <!-- Chapter Footer -->
+        <div class="chapter-footer" data-aos="fade-up">
+            <div class="chapter-actions">
+                <button class="action-btn" id="likeBtn"><i class="far fa-heart"></i> <span id="likeCount">128</span></button>
+                <button class="action-btn" id="bookmarkBtn"><i class="far fa-bookmark"></i> Bookmark</button>
+                <button class="action-btn" id="shareBtn"><i class="far fa-share-square"></i> Share</button>
+            </div>
+            <div class="chapter-pagination">
+                <button class="page-btn" id="prevChapterBottom" disabled><i class="fas fa-chevron-left"></i> Chapter Sebelumnya</button>
+                <select id="chapterSelect" class="chapter-select"></select>
+                <button class="page-btn" id="nextChapterBottom">Chapter Selanjutnya <i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="chapter-comments">
+                <h3>Komentar <span class="comment-count">(12)</span></h3>
+                <div class="comment-form">
+                    <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" alt="User">
+                    <input type="text" placeholder="Tulis komentar...">
+                    <button class="send-comment"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="comments-list" id="commentsList"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/chapter-template.js"></script>
+</body>
+                      </html>
