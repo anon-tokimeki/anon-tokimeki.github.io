@@ -3,65 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Novel - Streaming Layout</title>
+    <title>NovelVerse - Streaming Novel Modern</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="logo">
-                    <i class="fas fa-book-open"></i>
-                    NovelStream
-                </h1>
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Cari novel atau author...">
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span>Novel<span class="gradient-text">Verse</span></span>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link"><i class="fas fa-fire"></i> Popular</a>
+                <a href="#" class="nav-link"><i class="fas fa-clock"></i> Terbaru</a>
+                <a href="#" class="nav-link"><i class="fas fa-bookmark"></i> Favorit</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <div class="profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" alt="Profile">
                 </div>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <!-- Filter Section -->
-        <section class="filters">
-            <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="ongoing">Ongoing</button>
-                <button class="filter-btn" data-filter="completed">Completed</button>
-                <button class="filter-btn" data-filter="hiatus">Hiatus</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">
+                Selamat Datang di <span class="gradient-text">NovelVerse</span>
+            </h1>
+            <p class="hero-subtitle">Temukan ribuan novel menarik dengan pengalaman membaca seperti streaming</p>
+            
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Cari judul, penulis, atau genre...">
+                    <button class="search-btn">Cari</button>
+                </div>
             </div>
-            <div class="sort-by">
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Novel</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Chapter</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Pembaca</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Category Chips -->
+        <div class="category-section" data-aos="fade-up">
+            <div class="category-header">
+                <h2>Jelajahi Novel</h2>
+                <div class="category-nav">
+                    <button class="category-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="category-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="category-chips" id="categoryChips">
+                <button class="chip active" data-category="all">Semua</button>
+                <button class="chip" data-category="fantasy">Fantasy</button>
+                <button class="chip" data-category="romance">Romance</button>
+                <button class="chip" data-category="action">Action</button>
+                <button class="chip" data-category="slice-of-life">Slice of Life</button>
+                <button class="chip" data-category="mystery">Mystery</button>
+                <button class="chip" data-category="comedy">Comedy</button>
+                <button class="chip" data-category="drama">Drama</button>
+                <button class="chip" data-category="adventure">Adventure</button>
+            </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" data-aos="fade-up">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">
+                    <i class="fas fa-globe"></i> Semua
+                </button>
+                <button class="filter-tab" data-filter="ongoing">
+                    <i class="fas fa-spinner"></i> Ongoing
+                </button>
+                <button class="filter-tab" data-filter="completed">
+                    <i class="fas fa-check-circle"></i> Completed
+                </button>
+                <button class="filter-tab" data-filter="hiatus">
+                    <i class="fas fa-pause-circle"></i> Hiatus
+                </button>
+            </div>
+
+            <div class="sort-dropdown">
                 <select id="sortSelect">
                     <option value="latest">Terbaru</option>
-                    <option value="title">Judul A-Z</option>
+                    <option value="popular">Terpopuler</option>
                     <option value="rating">Rating Tertinggi</option>
+                    <option value="title">Judul A-Z</option>
                 </select>
+                <i class="fas fa-chevron-down"></i>
             </div>
-        </section>
+        </div>
 
         <!-- Novel Grid -->
-        <section class="novel-grid" id="novelGrid">
-            <!-- Novel cards will be inserted here via JavaScript -->
-        </section>
+        <div class="novel-grid-container">
+            <div class="novel-grid" id="novelGrid"></div>
+            <div class="loading-spinner" id="loadingSpinner">
+                <i class="fas fa-spinner fa-spin"></i> Memuat...
+            </div>
+        </div>
 
-        <!-- Chapter Modal -->
-        <div class="modal" id="chapterModal">
+        <!-- Load More Button -->
+        <div class="load-more" data-aos="fade-up">
+            <button class="load-more-btn" id="loadMoreBtn">
+                <i class="fas fa-plus"></i> Muat Lebih Banyak
+            </button>
+        </div>
+    </main>
+
+    <!-- Novel Modal -->
+    <div class="modal" id="novelModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 id="modalNovelTitle">Daftar Chapter</h2>
-                    <button class="close-modal"><i class="fas fa-times"></i></button>
+                    <div class="modal-cover">
+                        <img src="" alt="" id="modalCover">
+                    </div>
+                    <div class="modal-info">
+                        <h2 id="modalTitle"></h2>
+                        <div class="modal-meta">
+                            <span><i class="fas fa-user"></i> <span id="modalAuthor"></span></span>
+                            <span><i class="fas fa-star"></i> <span id="modalRating"></span></span>
+                            <span><i class="fas fa-book"></i> <span id="modalChapters"></span> chapters</span>
+                            <span><i class="fas fa-calendar"></i> <span id="modalStatus"></span></span>
+                        </div>
+                        <p id="modalDescription"></p>
+                        <div class="modal-genres" id="modalGenres"></div>
+                    </div>
                 </div>
-                <div class="modal-body" id="chapterList">
-                    <!-- Chapters will be inserted here -->
+
+                <div class="modal-body">
+                    <div class="modal-tabs">
+                        <button class="modal-tab active" data-tab="chapters">
+                            <i class="fas fa-list"></i> Daftar Chapter
+                        </button>
+                        <button class="modal-tab" data-tab="info">
+                            <i class="fas fa-info-circle"></i> Informasi
+                        </button>
+                        <button class="modal-tab" data-tab="reviews">
+                            <i class="fas fa-comments"></i> Review
+                        </button>
+                    </div>
+
+                    <div class="modal-panel active" id="chaptersPanel">
+                        <!-- Chapters will be loaded here -->
+                    </div>
+
+                    <div class="modal-panel" id="infoPanel">
+                        <div class="info-content">
+                            <h3>Sinopsis Lengkap</h3>
+                            <p id="fullDescription"></p>
+                            
+                            <h3>Detail Novel</h3>
+                            <div class="info-grid" id="novelDetails"></div>
+                        </div>
+                    </div>
+
+                    <div class="modal-panel" id="reviewsPanel">
+                        <div class="reviews-content">
+                            <div class="review-stats">
+                                <div class="average-rating">
+                                    <span class="rating-number" id="avgRating">4.5</span>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">128 reviews</span>
+                                </div>
+                            </div>
+                            
+                            <div class="reviews-list" id="reviewsList">
+                                <!-- Sample reviews -->
+                                <div class="review-item">
+                                    <div class="reviewer">
+                                        <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" alt="">
+                                        <div>
+                                            <h4>Pengguna 1</h4>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Novelnya sangat seru! Ceritanya menarik dan penuh plot twist.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
-                                                  </html>
+    </html>
